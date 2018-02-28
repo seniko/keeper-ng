@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    display: block;
+    min-height: 75px;
+    border-bottom: 1px solid lightgrey;
+}
+
+
+
+
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
