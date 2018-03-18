@@ -1,31 +1,33 @@
 <h1>{{boardCtrl.board.board_name}}</h1>
-<section ng-controller="columnsCtrl as columnsCtrl">
-    <div>
-        <section ng-controller="columnCtrl as columnCtrl" ng-repeat="column in columnsCtrl.columns | filter:columnsCtrl.page()">
-            {{column.column_name}}
-            <span ng-click="columnCtrl.remColumn(column)"> X</span>
+<section ng-controller="columnsCtrl as columnsCtrl" class="column-holder">
+
+        <section ng-controller="columnCtrl as columnCtrl" ng-repeat="column in columnsCtrl.columns | filter:columnsCtrl.page()" class="column">
+            <h4>{{column.column_name}}</h4>
+            <span ng-click="columnCtrl.remColumn(column)" class="remove box-remove"> X</span>
 
             <div ng-repeat="card in columnCtrl.getCards(column)">
                 {{card.card_name}}
-                <span ng-click="columnCtrl.remCard(card)"> X</span>
+                <span ng-click="columnCtrl.remCard(card)" class="remove"> X</span>
             </div>
 
-            <section>
-                <form ng-submit="columnCtrl.addCard(column)">
+            <section class="text-input">
+                <form ng-submit="columnCtrl.addCard(column)" class="text-name-input">
                     <label>
                         <input type="text" ng-model="columnCtrl.card_name">
                     </label>
                 </form>
+                <p>Item's name</p>
             </section>
 
         </section>
 
-        <section>
-            <form ng-submit="columnsCtrl.addColumn()">
+        <section class="column text-input">
+            <form ng-submit="columnsCtrl.addColumn()"class="text-name-input">
                 <label>
                     <input type="text" ng-model="columnsCtrl.column_name">
                 </label>
             </form>
+            <p>Column's name</p>
         </section>
-    </div>
+
 </section>

@@ -3,15 +3,74 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: Roboto, sans-serif;
+    padding: 15px;
+}
+a {
+    text-decoration: none;
+    color: #6e6e6e;
+}
 header {
     display: block;
     min-height: 75px;
-    border-bottom: 1px solid lightgrey;
+    text-align: center;
+    padding: 15px;
+    color: #afafaf;
 }
-
-
-
-
+.board-holder {
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+.board {
+    position: relative;
+    min-width: 200px;
+    border: 1px solid #f1f1f1;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.board a {
+    display: inline-block;
+    padding: 15px;
+    height: 100%;
+}
+.remove {
+    padding: 10px;
+    color: tomato;
+    cursor: pointer;
+}
+.text-name-input ~ p {
+    text-align: center;
+    font-size: 12px;
+}
+.text-input {
+    padding: 15px;
+    text-align: center;
+}
+.column-holder {
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+.column {
+    position: relative;
+    height: 100%;
+    border: 1px solid #f1f1f1;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 15px;
+}
+.box-remove {
+    position: absolute;
+    display: block;
+    top: 5px;
+    right: 5px;
+}
+.text-input {
+    height: 100%;
+}
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none;

@@ -1,21 +1,22 @@
-<section ng-controller="boardsCtrl as boardsCtrl">
-    <div>
-        <section ng-controller="boardCtrl as boardCtrl" ng-repeat="board in boardsCtrl.boards">
-            <a href="#!/{{board.board_id}}">{{board.board_name}}
-            {{board.board_description}}
-            {{board.board_date}}
+<section ng-controller="boardsCtrl as boardsCtrl" class="board-holder">
+
+        <section ng-controller="boardCtrl as boardCtrl" ng-repeat="board in boardsCtrl.boards" class="board">
+            <a href="#!/{{board.board_id}}">{{board.board_name}}</br>
+            {{board.board_description}}</br>
+            {{board.board_date}}</br>
             {{board.board_username}}</a>
 
-            <span ng-click="boardCtrl.remBoard(board)"> X</span>
+            <span ng-click="boardCtrl.remBoard(board)" class="remove box-remove"> X</span>
         </section>
 
-        <section>
-            <form ng-submit="boardsCtrl.addBoard()">
+        <section class="board text-input">
+            <form ng-submit="boardsCtrl.addBoard()" class="text-name-input">
                 <label>
                     <input type="text" ng-model="boardsCtrl.board_name">
                 </label>
             </form>
+            <p>Board's name</p>
         </section>
-    </div>
+
 </section>
 
